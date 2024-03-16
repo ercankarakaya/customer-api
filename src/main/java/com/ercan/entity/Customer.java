@@ -21,4 +21,7 @@ public class Customer {
 
     @Column(nullable = false)
     private Long customerNumber;
+
+    @Transient
+    private String fullName;
 }

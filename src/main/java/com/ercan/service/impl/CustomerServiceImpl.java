@@ -5,6 +5,7 @@ import com.ercan.entity.Customer;
 import com.ercan.mapper.CustomerMapper;
 import com.ercan.repository.CustomerRepository;
 import com.ercan.service.CustomerService;
+import com.ercan.specification.CustomerSpecification;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
