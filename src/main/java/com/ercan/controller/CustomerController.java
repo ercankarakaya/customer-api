@@ -40,6 +40,11 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.create(request.getCustomerDTO()));
     }
 
+    @PutMapping("update")
+    public ResponseEntity<CustomerDTO> updateCustomer(@RequestBody AddCustomerRequest request) {
+        return ResponseEntity.ok(customerService.update(request.getCustomerDTO()));
+    }
+
     @DeleteMapping("delete/{id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable Integer id) {
         customerService.deleteById(id);
