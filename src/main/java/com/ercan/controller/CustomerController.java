@@ -16,7 +16,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/customer/")
 public class CustomerController {
+
     private final CustomerService customerService;
+
 
     @GetMapping("list")
     public ResponseEntity<List<CustomerDTO>> getAllCustomerList() {
