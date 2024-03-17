@@ -19,9 +19,14 @@ public class Customer {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private Long customerNumber;
+
 
     @Transient
     private String fullName;
+
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
+    }
 }

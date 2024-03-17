@@ -9,9 +9,9 @@ public class CustomerSpecification {
 
     public static Specification<Customer> searchCustomer(String search) {
         return (root, query, criteriaBuilder) -> {
-            Predicate customerNumberPredicate = criteriaBuilder.like(root.get("customerNumber"), likePattern(search));
-            Predicate fullNamePredicate = criteriaBuilder.like(root.get("fullName"), likePattern(search));
-            return criteriaBuilder.or(fullNamePredicate, customerNumberPredicate);
+            Predicate firstNamePredicate = criteriaBuilder.like(criteriaBuilder.upper(root.get("firstName")), likePattern(search).toUpperCase());
+            Predicate lastNamePredicate = criteriaBuilder.like(root.get("lastName"), likePattern(search));
+            return criteriaBuilder.or(firstNamePredicate, lastNamePredicate);
         };
     }
 
